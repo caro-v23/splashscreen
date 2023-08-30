@@ -1,5 +1,6 @@
 package com.example.maggie
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -21,9 +22,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.currentCompositionLocalContext
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextDecoration
@@ -47,21 +50,21 @@ fun demo(){
     Column (modifier = Modifier
         .fillMaxSize()
         .padding(10.dp)){
-        Text(text = "Hello Maggie", color = Color.Red,
-            fontSize = 30.sp, fontFamily = FontFamily.Cursive, textDecoration = TextDecoration.Underline)
-        Spacer(modifier = Modifier.height(20.dp))
-
-        Text(text = "Welcome to Android", color = Color.Blue, fontSize = 20.sp ,fontFamily = FontFamily.Monospace)
-        Text(text = "Kotlin")
+        Text(text = "Hello Maggie", color = Color.Magenta, fontSize = 20.sp, fontFamily = FontFamily.Cursive)
+        Text(text = "Welcome to Android", color = Color.Black, fontFamily = FontFamily.Monospace)
         Spacer(modifier = Modifier.height(50.dp))
-        Text(text = "Jetpack compose", color = Color.Magenta , fontSize = 20.sp , fontFamily = FontFamily.Default)
+        Text(text = "Kotlin", color = Color.Magenta, fontSize = 15.sp, fontFamily = FontFamily.Monospace)
+        Text(text = "Jetpack compose",
+            color = Color.Cyan,
+            fontSize = 40.sp,
+            fontFamily = FontFamily.SansSerif)
         Divider()
         Spacer(modifier = Modifier.height(30.dp))
         Row {
-            Text(text = "Text 1",
+            Text(text = "",
                 fontSize = 30.sp)
             Spacer(modifier = Modifier.width(50.dp))
-            Text(text = "Text 2",
+            Text(text = "Text2",
                 fontSize = 30.sp)
         }
         Row {
@@ -77,28 +80,37 @@ fun demo(){
             Text(text = "No",
                 fontSize = 30.sp)
         }
-        Button(onClick = { /*TODO*/ }, shape = RectangleShape, colors = ButtonDefaults.buttonColors(
-            Color.Red)) {
+        Button(onClick = { /*TODO*/ },
+            shape = RectangleShape,
+            colors = ButtonDefaults.buttonColors(Color.Red)) {
             Text(text = "Click Me")
+
         }
-        Button(onClick = { /*TODO*/ }) {
-            Image(painter = painterResource(id = R.drawable.img_3), contentDescription ="icon")
-            Text(text = "Add to cart", modifier = Modifier.padding(start = 10.dp))
+        Button(onClick = { /*TODO*/ },
+            shape = CutCornerShape(5.dp),
+            colors = ButtonDefaults.buttonColors(Color.Red)  ) {
+
+            Image(painter = painterResource(id = R.drawable.img_3), contentDescription ="ICON" )
+            Text(text = "Add to cart",
+                modifier = Modifier
+                    .padding(start = 10.dp))
         }
         //Bordered button
         Button(onClick = { /*TODO*/ },
             shape = CutCornerShape(5.dp),
-            border = BorderStroke(3.dp, Color.Magenta),
+            border = BorderStroke(3.dp, Color.Red),
             colors = ButtonDefaults.outlinedButtonColors()
         ) {
-          Text(text = "Bordered button")
+            Text(text = "Bordered button")
+
         }
     }
 
 
+
 }
 
-
+@Preview
 
 @Preview(showBackground = true)
 @Composable

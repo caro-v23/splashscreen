@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Maggie</string>
     <string name="title_activity_image">ImageActivity</string>
+    <string name="title_activity_scroll">ScrollActivity</string>
+    <string name="title_activity_form">FormActivity</string>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>
