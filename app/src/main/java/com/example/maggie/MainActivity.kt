@@ -47,13 +47,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun demo(){
+    val mContext = LocalContext.current
     Column (modifier = Modifier
         .fillMaxSize()
         .padding(10.dp)){
-        Text(text = "Hello Maggie", color = Color.Magenta, fontSize = 20.sp, fontFamily = FontFamily.Cursive)
-        Text(text = "Welcome to Android", color = Color.Black, fontFamily = FontFamily.Monospace)
+        Text(text = "Hello Maggie", color = Color.Magenta, fontSize = 40.sp, fontFamily = FontFamily.Cursive)
+        Text(text = "Welcome to Maggie's Application", color = Color.Black, fontFamily = FontFamily.Monospace)
         Spacer(modifier = Modifier.height(50.dp))
-        Text(text = "Kotlin", color = Color.Magenta, fontSize = 15.sp, fontFamily = FontFamily.Monospace)
+        Text(text = "We use Kotlin", color = Color.Magenta, fontSize = 15.sp, fontFamily = FontFamily.Monospace)
         Text(text = "Jetpack compose",
             color = Color.Cyan,
             fontSize = 40.sp,
@@ -80,30 +81,51 @@ fun demo(){
             Text(text = "No",
                 fontSize = 30.sp)
         }
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {mContext.startActivity(Intent(mContext,ScrollActivity::class.java))},
             shape = RectangleShape,
-            colors = ButtonDefaults.buttonColors(Color.Red)) {
+            colors = ButtonDefaults.buttonColors(Color.Magenta)) {
             Text(text = "Click Me")
 
         }
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {mContext.startActivity(Intent(mContext,ImageActivity::class.java))},
+            shape = RectangleShape,
+            colors = ButtonDefaults.buttonColors(Color.Magenta)) {
+            Text(text = "Click Me")
+
+        }
+        Button(onClick = { mContext.startActivity(Intent(mContext,PracticalActivity::class.java)) },
             shape = CutCornerShape(5.dp),
-            colors = ButtonDefaults.buttonColors(Color.Red)  ) {
+            colors = ButtonDefaults.buttonColors(Color.Magenta)  ) {
 
             Image(painter = painterResource(id = R.drawable.img_3), contentDescription ="ICON" )
-            Text(text = "Add to cart",
+            Text(text = "Shopping",
                 modifier = Modifier
                     .padding(start = 10.dp))
         }
         //Bordered button
-        Button(onClick = { /*TODO*/ },
+        Button(onClick = {mContext.startActivity(Intent(mContext,FormActivity::class.java))  },
             shape = CutCornerShape(5.dp),
-            border = BorderStroke(3.dp, Color.Red),
+            border = BorderStroke(3.dp, Color.Magenta),
             colors = ButtonDefaults.outlinedButtonColors()
         ) {
-            Text(text = "Bordered button")
+            Text(text = "Get Started")
 
         }
+        Button(onClick = {mContext.startActivity(Intent(mContext,IntentActivity::class.java))},
+            shape = RectangleShape,
+            colors = ButtonDefaults.buttonColors(Color.Magenta)) {
+            Text(text = "Click Me")
+
+        }
+        Button(onClick = {mContext.startActivity(Intent(mContext,LottieAnimation::class.java))},
+            shape = RectangleShape,
+            colors = ButtonDefaults.buttonColors(Color.Magenta)) {
+            Text(text = "Animation")
+
+        }
+
+
+
     }
 
 

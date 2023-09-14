@@ -43,7 +43,7 @@ import androidx.core.net.toUri
 import com.example.maggie.ui.theme.MaggieTheme
 import java.util.function.IntToDoubleFunction
 
-class MainActivity2 : ComponentActivity() {
+class IntentActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -100,7 +100,7 @@ fun myIntent(){
         //STK
         OutlinedButton(onClick = {
             val simToolKitlaunchIntent = mContext.packageManager.getLaunchIntentForPackage("com.android.stk")
-                                 simToolKitlaunchIntent?.let { mContext.startActivity(it) }
+            simToolKitlaunchIntent?.let { mContext.startActivity(it) }
                                  },
             modifier = Modifier
                 .size(width = 300.dp, height = 70.dp)
@@ -151,7 +151,7 @@ fun myIntent(){
         Spacer(modifier = Modifier.height(10.dp) )
         //SHARE
         OutlinedButton(onClick = {
-                                 val shareIntent=Intent(Intent.ACTION_SEND)
+            val shareIntent=Intent(Intent.ACTION_SEND)
             shareIntent.type="text/plain"
             shareIntent.putExtra(Intent.EXTRA_TEXT,"Check this out")
             mContext.startActivity(shareIntent)
@@ -186,7 +186,7 @@ fun myIntent(){
         Spacer(modifier = Modifier.height(10.dp) )
         //SETTINGS
         OutlinedButton(onClick = {
-                                 val settingsIntent=Intent(Settings.ACTION_SETTINGS)
+            val settingsIntent=Intent(Settings.ACTION_SETTINGS)
             mContext.startActivity(settingsIntent)
         },
             modifier = Modifier

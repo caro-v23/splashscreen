@@ -13,7 +13,38 @@
         android:theme="@style/Theme.Maggie"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
+            android:name=".LocationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_location"
+            android:theme="@style/Theme.Maggie" />
+        <activity
+            android:name=".HomapageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_homapage"
+            android:theme="@style/Theme.Maggie" />
+        <activity
+            android:name=".LottieAnimation"
+            android:exported="false"
+            android:label="@string/title_activity_lottie_animation"
+            android:theme="@style/Theme.Maggie" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true"
+            android:label="@string/title_activity_splash_screen"
+            android:theme="@style/Theme.Maggie">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PracticalActivity"
+            android:exported="false"
+            android:label="@string/title_activity_practical"
+            android:theme="@style/Theme.Maggie" />
+        <activity
+            android:name=".IntentActivity"
             android:exported="false"
             android:label="@string/title_activity_main2"
             android:theme="@style/Theme.Maggie" />
@@ -36,13 +67,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Maggie">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.Maggie" />
     </application>
 
 </manifest>
